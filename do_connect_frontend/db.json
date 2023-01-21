@@ -1,0 +1,93 @@
+{
+  "users": [
+    {
+      "name": "Ravi Kant Prasad",
+      "email": "rkprasad0818@gmail.com",
+      "password": "admin",
+      "phone": 9872487324,
+      "id": 1
+    },
+    {
+      "name": "Ravi Kant Prasad",
+      "email": "rkpr8@gmail.com",
+      "password": "admin",
+      "phone": 9872487324,
+      "id": 2
+    },
+    {
+      "name": "Ravi Kant Prasad",
+      "email": "rkpr8@gmail.com",
+      "password": "admin",
+      "phone": 9872487324,
+      "id": 3
+    },
+    {
+      "name": "Ravi Kant Prasad",
+      "email": "rkpr8@gmail.com",
+      "password": "admin",
+      "phone": 9872487324,
+      "id": 4
+    },
+    {
+      "name": "Ravi Kant Prasad",
+      "email": "rkpr8@gmail.com",
+      "password": "admin",
+      "phone": 9872487324,
+      "id": 5
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "this is question?",
+      "postedBy": "Ravi",
+      "date": "24-08-2022",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "this is answer",
+          "postedBy": "xyz",
+          "date": "24-08-2022"
+        },
+        {
+          "id": 2,
+          "answer": "this is answer",
+          "postedBy": "xyz",
+          "date": "24-08-2022"
+        },
+        {
+          "id": 3,
+          "answer": "this is answer",
+          "postedBy": "xyz",
+          "date": "24-08-2022"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "this is question?",
+      "postedBy": "Ravi",
+      "date": "24-08-2022",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "this is answer",
+          "postedBy": "xyz",
+          "date": "24-08-2022"
+        },
+        {
+          "id": 2,
+          "answer": "this is answer",
+          "postedBy": "xyz",
+          "date": "24-08-2022"
+        },
+        {
+          "id": 3,
+          "answer": "this is answer",
+          "postedBy": "xyz",
+          "date": "24-08-2022"
+        }
+      ]
+    }
+  ]
+}
