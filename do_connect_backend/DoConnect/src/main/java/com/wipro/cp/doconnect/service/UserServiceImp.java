@@ -1,9 +1,3 @@
-/*
-* @Author: Ravi Kant Prasad
-* Modified Date: 26-08-2022
-* Description: User Service
-*/
-
 package com.wipro.cp.doconnect.service;
 
 import java.util.ArrayList;
@@ -49,13 +43,6 @@ public class UserServiceImp implements IUserService, UserDetailsService {
 		return convertOptionalUserToStatusDTOUserResponseDTO(userRepository.findByUsername(username), "User with username " + username + " does not exist.");
 	}
 
-	/*
-	* @Author: Ravi Kant Prasad
-	* Modified Date: 26-08-2022
-	* Description: Load user by username
-	* Params: Username string
-	* Return Type: UserDetails object
-	*/
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Optional<User> optionalUser = userRepository.findByUsername(username);
@@ -66,13 +53,6 @@ public class UserServiceImp implements IUserService, UserDetailsService {
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), new ArrayList<>());
 	}
 
-	/*
-	* @Author: Ravi Kant Prasad
-	* Modified Date: 26-08-2022
-	* Description: Create user
-	* Params: UserRegisterDTO object
-	* Return Type: UserResponseDTO wrapped with StatusDTO
-	*/
 	@Override
 	public StatusDTO<UserResponseDTO> createUser(UserRegisterDTO userRegisterDTO) {
 		if (userRepository.existsByUsername(userRegisterDTO.getUsername())) {
@@ -88,37 +68,16 @@ public class UserServiceImp implements IUserService, UserDetailsService {
 		return new StatusDTO<UserResponseDTO>("", true, convertUserToUserResponseDTO(userRepository.save(user)));
 	}
 
-	/*
-	* @Author: Ravi Kant Prasad
-	* Modified Date: 26-08-2022
-	* Description: Get all users
-	* Params: None
-	* Return Type: UserResponseDTO List
-	*/
 	@Override
 	public List<UserResponseDTO> getAllUsers() {
 		return userRepository.findAll().stream().map(user -> convertUserToUserResponseDTO(user)).collect(Collectors.toList());
 	}
 
-	/*
-	* @Author: Ravi Kant Prasad
-	* Modified Date: 26-08-2022
-	* Description: Get user by a particular user ID
-	* Params: User ID long
-	* Return Type: UserResponseDTO object wrapped with StatusDTO
-	*/
 	@Override
 	public StatusDTO<UserResponseDTO> getUserById(Long id) {
 		return convertOptionalUserToStatusDTOUserResponseDTO(userRepository.findById(id), "User with ID " + id + " does not exist.");
 	}
 
-	/*
-	* @Author: Ravi Kant Prasad
-	* Modified Date: 26-08-2022
-	* Description: Update a particular user ID
-	* Params: UserUpdateDTO object, User ID long
-	* Return Type: UserResponseDTO object wrapped with StatusDTO
-	*/
 	@Override
 	public StatusDTO<UserResponseDTO> updateUser(UserUpdateDTO userUpdateDTO, Long id) {
 		Optional<User> optionalUser = userRepository.findById(id);
@@ -131,13 +90,6 @@ public class UserServiceImp implements IUserService, UserDetailsService {
 		return new StatusDTO<UserResponseDTO>("", true, convertUserToUserResponseDTO(userRepository.save(user)));
 	}
 
-	/*
-	* @Author: Ravi Kant Prasad
-	* Modified Date: 26-08-2022
-	* Description: Delete a particular user ID
-	* Params: User ID long
-	* Return Type: Boolean
-	*/
 	@Override
 	public boolean deleteUserById(Long id) {
 		Optional<User> optionalUser = userRepository.findById(id);
@@ -148,13 +100,6 @@ public class UserServiceImp implements IUserService, UserDetailsService {
 		return true;
 	}
 
-	/*
-	* @Author: Ravi Kant Prasad
-	* Modified Date: 26-08-2022
-	* Description: Delete all users
-	* Params: None
-	* Return Type: None
-	*/
 	@Override
 	public void deleteAllUsers() {
 		userRepository.deleteAllInBatch();
