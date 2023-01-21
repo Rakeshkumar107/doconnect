@@ -1,0 +1,40 @@
+<form [formGroup]="questionForm" (ngSubmit)="submit()" style="height: 100%;">
+  <div class="row text-white" style="height: 100%">
+    <div class="col-xl-4 col-lg-3 col-md-2"></div>
+    <div class="col-xl-4 col-lg-6 col-md-8 my-auto" style="max-height: 100%">
+      <div class="py-3 text-center"><h2>Ask Question</h2></div>
+      <div class="form-group py-2">
+        <label for="topic" class="form-label">Topic*</label>
+        <select class="form-select" formControlName="topic" id="topic" required>
+          <option *ngFor="let topic of topicOptions" value="{{ topic }}">{{ topic }}</option>
+        </select>
+        <div
+          *ngIf="(questionForm.get('topic')?.dirty || questionForm.get('topic')?.touched) && questionForm.get('topic')?.errors?.['required']">
+          Topic is required.
+        </div>
+      </div>
+      <div class="form-group py-2">
+        <label for="question" class="form-label">Question*</label>
+        <textarea class="form-control" formControlName="question" rows="5" id="question" maxlength="1000" required></textarea>
+        <div
+          *ngIf="(questionForm.get('question')?.dirty || questionForm.get('question')?.touched) && questionForm.get('question')?.errors?.['required']">
+          Question is required
+        </div>
+      </div>
+      <div class="form-group py-2 d-flex flex-column">
+        <label for="images" class="form-label">Images</label>
+        <input type="file" formControlName="images" id="images" (change)="onChange($event)" />
+        <small id="images" class="form-text text-muted">Only '.png' and '.jpeg' are supported</small>
+      </div>
+      <div class="form-group py-1 d-flex flex-wrap">
+        <div *ngFor="let imageName of uploadedImages" class="p-1">
+          <img [attr.src]="getImageUrl(imageName) | secure | async" alt="image" height="100" />
+        </div>
+      </div>
+      <div class="py-2 d-flex justify-content-end">
+        <button class="btn btn-success" type="submit" [disabled]="!questionForm.valid">Submit</button>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-3 col-md-2"></div>
+  </div>
+</form>
