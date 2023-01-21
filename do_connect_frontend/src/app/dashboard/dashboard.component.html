@@ -1,0 +1,116 @@
+<div class="container text-white pt-4">
+  <div class="row">
+    <div class="d-flex justify-content-around">
+      <button class="btn {{ (mode === 'questions') ? 'btn-primary' : 'btn-secondary' }}" (click)="getUnapprovedQuestions()">
+        Unapproved Questions
+      </button>
+      <button class="btn {{ (mode === 'answers') ? 'btn-primary' : 'btn-secondary' }}" (click)="getUnapprovedAnswers()">
+        Unapproved Answers
+      </button>
+      <button class="btn {{ (mode === 'users') ? 'btn-primary' : 'btn-secondary' }}" (click)="getUsers()">
+        All Users List
+      </button>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div *ngIf="mode == 'questions'">
+      <div *ngIf="questionList.length === 0" class="d-flex justify-content-center mt-2">
+        <span>No questions to approve</span>
+      </div>
+      <table *ngIf="questionList.length !== 0" class="table table-dark text-center">
+        <thead>
+          <th>Question</th>
+          <th>Topic</th>
+          <th>Posted By</th>
+          <th>Posted At</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let question of questionList">
+            <td class="align-middle text-start" style="max-width: max(35vw, 300px);">{{ question.question }}</td>
+            <td class="align-middle">{{ question.topic }}</td>
+            <td class="align-middle">{{ question.postedBy }}</td>
+            <td class="align-middle">{{ question.postedAt | date: 'medium' }}</td>
+            <td class="align-middle">
+              <button
+                class="btn btn-success mx-1"
+                (click)="onApproveQuestion(question.id)"
+              >
+                <i class="fa fa-check fa-lg" aria-hidden="true"></i>
+              </button>
+              <button
+                class="btn btn-danger mx-1"
+                (click)="onDeleteQuestion(question.id)"
+              >
+                <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="mode == 'answers'">
+      <div *ngIf="answerList.length === 0" class="d-flex justify-content-center mt-2">
+        <span>No answers to approve</span>
+      </div>
+      <table *ngIf="answerList.length !== 0" class="table table-dark text-center">
+        <thead>
+          <th>Question</th>
+          <th>Answer</th>
+          <th>Posted By</th>
+          <th>Posted At</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let answer of answerList">
+            <td class="align-middle text-start" style="max-width: max(25vw, 300px);">{{ answer.question?.question }}</td>
+            <td class="align-middle text-start" style="max-width: max(25vw, 300px);">{{ answer.answer }}</td>
+            <td class="align-middle">{{ answer.postedBy }}</td>
+            <td class="align-middle">{{ answer.postedAt | date:'medium' }}</td>
+            <td class="align-middle">
+              <button
+                class="btn btn-success mx-1"
+                (click)="onApproveAnswer(answer)"
+              >
+                <i class="fa fa-check fa-lg" aria-hidden="true"></i>
+              </button>
+              <button
+                class="btn btn-danger mx-1"
+                (click)="onDeleteAnswer(answer)"
+              >
+                <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="mode == 'users'">
+      <div *ngIf="userList.length === 0" class="d-flex justify-content-center mt-2">
+        <span>No users exist</span>
+      </div>
+      <table *ngIf="userList.length !== 0" class="table table-dark text-center">
+        <thead>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userList">
+            <td class="align-middle">{{ user.username }}</td>
+            <td class="align-middle">{{ user.name }}</td>
+            <td class="align-middle">{{ user.email }}</td>
+            <td class="align-middle">{{ user.isAdmin === true ? "Admin" : "User" }}</td>
+            <td class="align-middle">
+              <button class="btn btn-danger mx-1" (click)="onDelete(user.id)">
+                <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
