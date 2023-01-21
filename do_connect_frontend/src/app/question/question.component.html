@@ -1,0 +1,80 @@
+<div class="d-flex flex-column text-white">
+  <div class="py-2 text-center"><h2>{{ questionData?.question }}</h2></div>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <div class="d-flex flex-column my-2">
+        <div class="d-flex flex-row justify-content-between">
+          <strong>Topic</strong>
+          <span>{{ questionData?.topic }}</span>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+          <strong>Posted By</strong>
+          <span>{{ questionData?.postedBy }}</span>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+          <strong>Posted At</strong>
+          <span>{{ questionData?.postedAt | date:'medium' }}</span>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+          <strong>Approved By</strong>
+          <span>{{ questionData?.approvedBy }}</span>
+        </div>
+        <div class="d-flex flex-wrap flex-row justify-content-end">
+          <div *ngFor="let imageName of questionData?.images" class="p-1">
+            <img [attr.src]="getImageUrl(imageName) | secure | async" alt="image" height="100" />
+          </div>
+        </div>
+      </div>
+      <form [formGroup]="answerForm" (ngSubmit)="submit()">
+        <div class="form-group py-2">
+          <label for="answer" class="form-label">Your Answer</label>
+          <textarea class="form-control" formControlName="answer" rows="5" id="answer" maxlength="1000" required></textarea>
+          <div
+            *ngIf="(answerForm.get('answer')?.dirty || answerForm.get('answer')?.touched) && answerForm.get('answer')?.errors?.['required']">
+            Answer is required
+          </div>
+        </div>
+        <div class="form-group py-2 d-flex flex-column">
+          <label for="images" class="form-label">Images</label>
+          <input type="file" formControlName="images" id="images" (change)="onChange($event)" />
+          <small id="images" class="form-text text-muted">Only '.png' and '.jpeg' are supported</small>
+        </div>
+        <div class="form-group py-1 d-flex flex-wrap">
+          <div *ngFor="let imageName of uploadedImages" class="p-1">
+            <img [attr.src]="getImageUrl(imageName) | secure | async" alt="image" height="100" />
+          </div>
+        </div>
+        <div class="py-2 d-flex justify-content-end">
+          <button class="btn btn-success" type="submit" [disabled]="!answerForm.valid">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div class="pb-2 text-center"><h4>Other Answers</h4></div>
+      <div class="d-flex flex-column">
+        <div *ngFor="let answerData of answersList">
+          <div class="d-flex flex-column mt-2" style="border-radius: 0.5rem; border: 1px solid; padding: 0.5rem;">
+            <strong class="mb-2 text-center">{{ answerData.answer }}</strong>
+            <div class="d-flex flex-row justify-content-between">
+              <strong>Posted By</strong>
+              <span>{{ answerData.postedBy }}</span>
+            </div>
+            <div class="d-flex flex-row justify-content-between">
+              <strong>Posted At</strong>
+              <span>{{ answerData.postedAt | date:'medium' }}</span>
+            </div>
+            <div class="d-flex flex-row justify-content-between">
+              <strong>Approved By</strong>
+              <span>{{ answerData.approvedBy }}</span>
+            </div>
+            <div class="d-flex flex-wrap flex-row justify-content-end">
+              <div *ngFor="let imageName of answerData?.images" class="p-1">
+                <img [attr.src]="getImageUrl(imageName) | secure | async" alt="image" height="100" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
