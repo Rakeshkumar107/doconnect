@@ -1,0 +1,51 @@
+.chatbox {
+  color: black;
+  height: max(50vh, 450px);
+  width: max(30vw, 300px);
+  background-color: aliceblue;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 8rem;
+  right: 2rem;
+  border-radius: 0.5rem;
+  z-index: 5;
+}
+
+.inputbox {
+  bottom: 0;
+  padding-top: 0.25rem;
+}
+
+.message-box {
+  height: calc(100% - 40px);
+  border: 1px;
+  overflow: auto;
+  position: relative;
+}
+
+.message {
+  background-image: linear-gradient(to right top, #004dc0, #0e2a6c);
+  color: rgb(190, 205, 255);
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-right {
+  text-align: right;
+  color: white;
+}
+
+.message-left {
+  text-align: left;
+  color: white;
+}
+
+.message-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: smaller;
+}
