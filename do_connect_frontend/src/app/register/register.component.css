@@ -1,0 +1,17 @@
+.form-group input {
+  color: white;
+  background-color: transparent !important;
+  border: none;
+  border-radius: 0.25rem;
+  border: 1px solid white;
+}
+
+.form-group input:focus {
+  color: white;
+  outline: none !important;
+  box-shadow: none;
+  background-color: rgba(191, 191, 191, 0.193) !important;
+  border: none;
+  border-radius: 0.25rem;
+  border: 1px solid white;
+}
