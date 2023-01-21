@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark px-4" >
+  <a class="navbar-brand h1 my-auto" routerLink="{{ (isAdmin === true && isLoggedIn === true) ? '/dashboard' : '/' }}">DoConnect</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+    <ul class="navbar-nav">
+      <li *ngIf="isLoggedIn === true" class="nav-item d-flex align-items-center" style="padding-right: 1rem;">
+        <span class="text-white">Welcome {{ username }}</span>
+      </li>
+      <li *ngIf="isAdmin === false && isLoggedIn === true" class="nav-item">
+        <a class="nav-link" routerLink="/post-question">Ask Question</a>
+      </li>
+      <li *ngIf="isLoggedIn === false" class="nav-item">
+        <a class="nav-link" routerLink="/register">Register</a>
+      </li>
+      <li *ngIf="isLoggedIn === false" class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="isLoggedIn === true" class="nav-item">
+        <button class="btn nav-link" (click)="onLogout()">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>
