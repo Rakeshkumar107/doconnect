@@ -1,0 +1,16 @@
+.main-container {
+    background-image: linear-gradient(
+      to right top,
+      #051937,
+      #0e2a6c,
+      #3d359f,
+      #7a35cd,
+      #c314f2
+    );
+    height: 100vh;
+}
+
+.routes-container {
+    height: calc(100vh - 98px);
+    overflow: auto;
+}
