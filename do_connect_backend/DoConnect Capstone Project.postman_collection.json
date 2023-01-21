@@ -1,0 +1,932 @@
+{
+	"info": {
+		"_postman_id": "5c14346b-ea3d-403a-984d-fb02cd7a6ed8",
+		"name": "DoConnect Capstone Project",
+		"description": "DoConnect Capstone Project REST API Endpoints details.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22619752"
+	},
+	"item": [
+		{
+			"name": "Register Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Devashish\",\r\n    \"password\": \"password\",\r\n    \"email\": \"devashishpathrabe@gmail.com\",\r\n    \"name\": \"Devashish\",\r\n    \"isAdmin\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Devashish\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNDY0MzUzLCJpYXQiOjE2NjE0NTM1NTMsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.ZqAOlFNGFhKbQp-AiRze_UUrE5bsQmR5woXtSshfTfzfnDhD6zPzGupHCT5ZxNCCj9DTijeCIPbzQ7uh-f4D6g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/signout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"TestUser\",\r\n    \"password\": \"password\",\r\n    \"email\": \"testuser01@gmail.com\",\r\n    \"name\": \"Test User\",\r\n    \"isAdmin\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"TestUser\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNDY0NjI5LCJpYXQiOjE2NjE0NTM4MjksImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.jWHYw9YwDqoeMeE_8dqjUiz_6MMFjkHI_BjY0YU0yAxqgO95FpjMzzmXYrUE2ynvzj-6l_F1iQGy1lMruFLp2g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/signout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Approved Questions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTAyMjQ0LCJpYXQiOjE2NjE0OTE0NDQsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.kQ_uHmtG3ru9_4X5mgl3xpw-nmxKsNmWECF-3DcxzmarCd6EpZITVHNwCbGL_rNeV8tMHsKdNv73FHg-mxwBDg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Question by ID - User and Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTQ3NzcwLCJpYXQiOjE2NjE1MzY5NzAsImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.r0g3q6DqjWl7oEDI9m-9YUYsMDfAsInY7zpnSQchrb0WKjAd5eKqr_3wyYEdwyOHwyt8EYwWfu7nwq7QhcFKnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Question User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTQ3NzcwLCJpYXQiOjE2NjE1MzY5NzAsImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.r0g3q6DqjWl7oEDI9m-9YUYsMDfAsInY7zpnSQchrb0WKjAd5eKqr_3wyYEdwyOHwyt8EYwWfu7nwq7QhcFKnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\": \"Which is tallest statue in the world?\",\r\n    \"topic\": \"General Knowledge\",\r\n    \"images\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unapproved Questions List Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTA4NTcyLCJpYXQiOjE2NjE0OTc3NzIsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.cImUJQjeYHJQ9FeIgbSzYh1CEi6b0HKJsZRow_dF1awjU13fj6lBsQNbbTiX-bzqx4GSQhrJJYOyxwSd6jdalQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions?status=unapproved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "unapproved"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Question Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTA4NTcyLCJpYXQiOjE2NjE0OTc3NzIsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.cImUJQjeYHJQ9FeIgbSzYh1CEi6b0HKJsZRow_dF1awjU13fj6lBsQNbbTiX-bzqx4GSQhrJJYOyxwSd6jdalQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isApproved\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approved Questions List - User and Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTA3Nzc4LCJpYXQiOjE2NjE0OTY5NzgsImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.YAjl_dumDZ6I-Ih3zV6O5r3rR1mvBozQ3V0NU4gUJEV9BwYFy-mzs32TxpHvwQRBAy1f9vMJB_HjTi0r8al10A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions?status=approved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "approved"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approved Questions List by Status Approved and Search - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTA3Nzc4LCJpYXQiOjE2NjE0OTY5NzgsImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.YAjl_dumDZ6I-Ih3zV6O5r3rR1mvBozQ3V0NU4gUJEV9BwYFy-mzs32TxpHvwQRBAy1f9vMJB_HjTi0r8al10A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions?status=approved&search=your",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "approved"
+						},
+						{
+							"key": "search",
+							"value": "your"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Questions List - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTA4NTcyLCJpYXQiOjE2NjE0OTc3NzIsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.cImUJQjeYHJQ9FeIgbSzYh1CEi6b0HKJsZRow_dF1awjU13fj6lBsQNbbTiX-bzqx4GSQhrJJYOyxwSd6jdalQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions?status=all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Questions List by Search - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTA3Nzc4LCJpYXQiOjE2NjE0OTY5NzgsImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.YAjl_dumDZ6I-Ih3zV6O5r3rR1mvBozQ3V0NU4gUJEV9BwYFy-mzs32TxpHvwQRBAy1f9vMJB_HjTi0r8al10A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions?search=your",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "your"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Answer - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTA3Nzc4LCJpYXQiOjE2NjE0OTY5NzgsImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.YAjl_dumDZ6I-Ih3zV6O5r3rR1mvBozQ3V0NU4gUJEV9BwYFy-mzs32TxpHvwQRBAy1f9vMJB_HjTi0r8al10A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"answer\": \"Devashish\",\r\n    \"images\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/1/answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"1",
+						"answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unapproved Answers List for Question - Admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTA4NTcyLCJpYXQiOjE2NjE0OTc3NzIsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.cImUJQjeYHJQ9FeIgbSzYh1CEi6b0HKJsZRow_dF1awjU13fj6lBsQNbbTiX-bzqx4GSQhrJJYOyxwSd6jdalQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/1/answers?status=unapproved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"1",
+						"answers"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "unapproved"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Answer of Question - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTA4NTcyLCJpYXQiOjE2NjE0OTc3NzIsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.cImUJQjeYHJQ9FeIgbSzYh1CEi6b0HKJsZRow_dF1awjU13fj6lBsQNbbTiX-bzqx4GSQhrJJYOyxwSd6jdalQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isApproved\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/1/answers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"1",
+						"answers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Answers List - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTA4NTcyLCJpYXQiOjE2NjE0OTc3NzIsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.cImUJQjeYHJQ9FeIgbSzYh1CEi6b0HKJsZRow_dF1awjU13fj6lBsQNbbTiX-bzqx4GSQhrJJYOyxwSd6jdalQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approved Answers List of Question - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTA3Nzc4LCJpYXQiOjE2NjE0OTY5NzgsImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.YAjl_dumDZ6I-Ih3zV6O5r3rR1mvBozQ3V0NU4gUJEV9BwYFy-mzs32TxpHvwQRBAy1f9vMJB_HjTi0r8al10A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/1/answers?status=approved",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"1",
+						"answers"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "approved"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Answers List of Question - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTA3Nzc4LCJpYXQiOjE2NjE0OTY5NzgsImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.YAjl_dumDZ6I-Ih3zV6O5r3rR1mvBozQ3V0NU4gUJEV9BwYFy-mzs32TxpHvwQRBAy1f9vMJB_HjTi0r8al10A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/1/answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"1",
+						"answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Question - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTA4NTcyLCJpYXQiOjE2NjE0OTc3NzIsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.cImUJQjeYHJQ9FeIgbSzYh1CEi6b0HKJsZRow_dF1awjU13fj6lBsQNbbTiX-bzqx4GSQhrJJYOyxwSd6jdalQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Answer of Question - Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXZhc2hpc2giLCJuYW1lIjoiRGV2YXNoaXNoIiwiaXNBZG1pbiI6dHJ1ZSwiZXhwIjoxNjYxNTA4NTcyLCJpYXQiOjE2NjE0OTc3NzIsImVtYWlsIjoiZGV2YXNoaXNocGF0aHJhYmVAZ21haWwuY29tIn0.cImUJQjeYHJQ9FeIgbSzYh1CEi6b0HKJsZRow_dF1awjU13fj6lBsQNbbTiX-bzqx4GSQhrJJYOyxwSd6jdalQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/questions/3/answers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"3",
+						"answers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Chat Message - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTM2ODE5LCJpYXQiOjE2NjE1MjYwMTksImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.xrbVYAA_6Tj2eJYxedBNO19C8RZTMEP9RkpLepDCOUTtkzhui53p-L1Our0LdA0beJ44DuMFRYAofILNOrr8Rw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Great to hear that.\",\r\n    \"postedBy\": \"TestUser01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Chat Messages List - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZXN0VXNlciIsIm5hbWUiOiJUZXN0IFVzZXIiLCJpc0FkbWluIjpmYWxzZSwiZXhwIjoxNjYxNTM2ODE5LCJpYXQiOjE2NjE1MjYwMTksImVtYWlsIjoidGVzdHVzZXIwMUBnbWFpbC5jb20ifQ.xrbVYAA_6Tj2eJYxedBNO19C8RZTMEP9RkpLepDCOUTtkzhui53p-L1Our0LdA0beJ44DuMFRYAofILNOrr8Rw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
