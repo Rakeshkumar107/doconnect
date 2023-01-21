@@ -1,0 +1,18 @@
+img {
+  max-width: 50%;
+  max-height: 100%;
+}
+
+.product {
+  border-radius: 5px;
+}
+
+#remove-button {
+  all: unset;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#remove-button:hover {
+  font-size: 25px;
+}
