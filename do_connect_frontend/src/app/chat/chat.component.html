@@ -1,0 +1,15 @@
+<div class="chatbox">
+  <div class="message-box" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <div *ngFor="let message of chatMessageList" class="message">
+      <div class="message-header">
+        <span class="font-weight-light">{{ message.postedBy }}</span>
+        <span class="font-weight-light">{{ message.postedAt | date: 'medium' }}</span>
+      </div>
+      <span class="{{ (currentUsername === message.postedBy) ? 'message-right' : 'message-left' }}">{{ message.message }}</span>
+    </div>
+  </div>
+  <div class="inputbox input-group text-center">
+    <input [(ngModel)]="message" class="form-control" type="text" name="" id="" />
+    <button class="btn btn-primary" (click)="onSendMessage()">Send</button>
+  </div>
+</div>
