@@ -1,0 +1,14 @@
+.chat-button {
+    position: absolute;
+    bottom: 5rem;
+    z-index: 5;
+    right: 2rem;
+}
+
+.question-card {
+    height: 100%;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
